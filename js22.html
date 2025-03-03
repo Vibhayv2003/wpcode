@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type "JAVASCRIPT" Input</title>
+</head>
+<body>
+  <h3>Type "JAVASCRIPT" below:</h3>
+  <input type="text" id="textInput" />
+  <span id="tick" class="correct">✔️</span>
+  <span id="cross" class="wrong">❌</span>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const tick = document.getElementById('tick');
+    const cross = document.getElementById('cross');
+
+    // Display tick if input is correct as the user types
+    textInput.addEventListener('input', function() {
+      if (textInput.value === 'JAVASCRIPT') {
+        tick.style.display = 'inline';
+        cross.style.display = 'none';
+      } else {
+        tick.style.display = 'none';
+      }
+    });
+
+    // Display wrong cross if incorrect when clicking outside the input
+    textInput.addEventListener('change', function() {
+      if (textInput.value !== 'JAVASCRIPT') {
+        cross.style.display = 'inline';
+        tick.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

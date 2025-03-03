@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+
+<form id="myForm">
+    <label>Email: <input type="text" id="email" oninput="validateEmail()"></label>
+    <span id="email-validity" class="invalid">❌</span><br><br>
+
+    <label>Password: <input type="password" id="password" oninput="validatePassword()"></label>
+    <span id="password-strength">Weak</span><br><br>
+
+    <label>Phone Number: <input type="text" id="number" oninput="validateNumber()"></label>
+    <span id="number-validity" class="invalid">❌</span><br><br>
+
+    <button type="submit" id="submitBtn" disabled>Submit</button>
+</form>
+
+<script>
+    const emailField = document.getElementById('email');
+    const passwordField = document.getElementById('password');
+    const numberField = document.getElementById('number');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function validateEmail() {
+        const isValid = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,6}$/.test(emailField.value);
+        toggleValidity('email-validity', isValid);
+        checkFormValidity();
+    }
+
+    function validatePassword() {
+        const isValid = passwordField.value.length >= 8 && /\d/.test(passwordField.value);
+        document.getElementById('password-strength').textContent = isValid ? 'Strong' : 'Weak';
+        checkFormValidity();
+    }
+
+    function validateNumber() {
+        const isValid = /^\d{10}$/.test(numberField.value);
+        toggleValidity('number-validity', isValid);
+        checkFormValidity();
+    }
+
+    function toggleValidity(elementId, isValid) {
+        const el = document.getElementById(elementId);
+        el.textContent = isValid ? '✔️' : '❌';
+        el.classList.toggle('valid', isValid);
+        el.classList.toggle('invalid', !isValid);
+    }
+
+    function checkFormValidity() {
+        const isFormValid = document.querySelectorAll('.valid').length === 2 &&
+            document.getElementById('password-strength').textContent === 'Strong';
+        submitBtn.disabled = !isFormValid;
+    }
+</script>
+
+</body>
+</html>

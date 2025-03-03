@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>array</title>
+    </head>
+    <body>
+        <script>
+            // Create two arrays to work with
+const array1 = [30, 10, 50, 20, 40];
+const array2 = ["apple", "orange", "banana", "grape"];
+
+// Demonstrating join() method
+// This method joins all the elements of an array into a string, separated by a specified separator
+const joinedArray1 = array1.join(", "); // Joins elements with ", "
+console.log("Joined array1:", joinedArray1);
+
+const joinedArray2 = array2.join(" - "); // Joins elements with " - "
+console.log("Joined array2:", joinedArray2);
+
+// Demonstrating reverse() method
+// This method reverses the order of the elements in the array
+const reversedArray1 = array1.reverse(); 
+console.log("Reversed array1:", reversedArray1);
+
+const reversedArray2 = array2.reverse(); 
+console.log("Reversed array2:", reversedArray2);
+
+// Demonstrating sort() method
+// This method sorts the elements of an array. For numbers, you need to provide a compare function for proper sorting.
+const sortedArray1 = array1.sort((a, b) => a - b); // Sorts numbers in ascending order
+console.log("Sorted array1 (ascending):", sortedArray1);
+
+const sortedArray2 = array2.sort(); // Sorts strings in alphabetical order
+console.log("Sorted array2 (alphabetical):", sortedArray2);
+
+// Demonstrating concat() method
+// This method merges two or more arrays into a single array
+const concatenatedArray = array1.concat(array2); // Concatenates array1 and array2
+console.log("Concatenated array:", concatenatedArray);
+
+         </script>
+    </body>
+</html>

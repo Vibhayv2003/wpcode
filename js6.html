@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>array</title>
+    </head>
+    <body>
+        <script>
+          function add(a,b){
+            return a+b;
+          }
+          function subtract(a,b){
+            return a-b;
+          }
+          function multiply(a,b){
+            return a*b;
+          }
+          function divide(a,b){
+            if(b==0){
+                return "error:division by zero";
+            }
+            return a/b;
+          }
+          let a=parseInt(prompt("enter A"));
+          let b=parseInt(prompt("enter b"));
+          document.write("add"+"\n"+add(a,b)+"\n");
+          document.write("sub"+"\n"+subtract(a,b)+"\n");
+          document.write("mul"+"\n"+multiply(a,b)+"\n");
+          document.write("div"+"\n"+divide(a,b));
+
+        </script>
+    </body>
+</html>

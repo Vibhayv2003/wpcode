@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>array</title>
+    </head>
+    <body>
+        <script>
+            const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// Variables to store the first two numbers of the Fibonacci sequence
+let n1 = 0, n2 = 1;
+
+// Use forEach() to iterate through the array and calculate Fibonacci numbers
+numbers.forEach(function(num, index) {
+  if (index === 0) {
+    console.log(n1); // Output the first number (0)
+  } else if (index === 1) {
+    console.log(n2); // Output the second number (1)
+  } else {
+    // Calculate the next Fibonacci number
+    let nextTerm = n1 + n2;
+    console.log(nextTerm); // Print the Fibonacci number
+    
+    // Update the values of n1 and n2 for the next iteration
+    n1 = n2;
+    n2 = nextTerm;
+  }
+});
+
+         </script>
+    </body>
+</html>
